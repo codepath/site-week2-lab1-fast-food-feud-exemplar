@@ -4,26 +4,26 @@ Week 2 - React Lab #1
 
 ## Goals
 
-By the end of this lab, site interns should understand...
+By the end of this lab, SITE interns should understand...
 
 - How React's component-based design is centered around writing functions that return `JSX`.
 - The way that React enforces a one-way flow of data from parent to child - known as passing `props`.
 - Iteration in `JSX` and how it's used to render lists of items.
 - Strategies used to customize component styles using its `props`.
-- Default `props` and how they can be overriden.
+- Default `props` and how they can be overridden.
 - The `useState` hook in React and how it's used to manage data that changes - simply called `state`.
 - What event handlers like `onClick` are used for and how they can trigger state changes.
 - Conditionally rendering JSX based on `props` or `state` values.
 
 ## Intro
 
-A local startup has asked Site interns to help them construct their new product - `Fast Food Feud`! They love the name and even have a tagline they workshopped: `Folks' Favorite Friendly Fuel Finder For Food Facts`. The one thing they don't have is a working application.
+A local startup has asked SITE interns to help them construct their new product - `Fast Food Feud`! They love the name and even have a tagline they workshopped: `Folks' Favorite Friendly Fuel Finder For Food Facts`. The one thing they don't have is a working application.
 
 Here's what they have to say about their vision for the mini-app:
 
 > Finding healthy food is hard. Sometimes we just settle for what's available. That doesn't mean we shouldn't know what's going into our bodies! **Fast Food Feud** is here to arm the public with all the nutritional facts needed to make informed decisions about fast food consumption.
 
-They've sourced their nutrition data, bootstrapped a React application, and even hired a designer to creat some styles. However, they quickly realized that they didn't know enough React to make this happen, so they've called on Site to fill in the gaps.
+They've sourced their nutrition data, bootstrapped a React application, and even hired a designer to create some styles. However, they quickly realized that they didn't know enough React to make this happen, so they've called on SITE to fill in the gaps.
 
 ## Application Features
 
@@ -60,7 +60,7 @@ They've sourced their nutrition data, bootstrapped a React application, and even
     - Component reuse via `props`
       - Now that we have both the categories and restaurants listed in our application, let's start thinking about making them look nice.
       - We saw in our `Header` and `Instructions` components how we could use `props` to customize what our components render. But they can do a lot more than that.
-      - Props are most useful when we want to reuse and customize a component without copy-pasintg our code over and over. That's where `props` shine, since they essentially allow us to use our components as templates that can be customized with specified `PROP`erties. Let's see that in action.
+      - Props are most useful when we want to reuse and customize a component without copy-pasting our code over and over. That's where `props` shine, since they essentially allow us to use our components as templates that can be customized with specified `PROP`erties. Let's see that in action.
       - Import the `Chip` component into our `App.js` file and replace all of the `p` tags we used to render categories with our `Chip` component. Make sure to see what props it needs to render the proper value
     - Customizing component styles with props
       - Interpolating a value into the `className` string
@@ -80,13 +80,13 @@ They've sourced their nutrition data, bootstrapped a React application, and even
         - Instead, just provide a listener when the element is initially rendered.
         - React events are named using camelCase, rather than lowercase.
         - With JSX you pass a function as the event handler, rather than a string.
-        - The React [docs](https://reactjs.org/docs/handling-events.html) on event handlers covers more detail on this subject.
+        - The React [docs](https://reactjs.org/docs/handling-events.html) on event handlers cover more detail on this subject.
       - Let's add an `onClick` event handler to our `Chip` components that will allow our users to select a category.
         - Pass an anonymous function to the `Chip`'s `onClick` handler so that each `Chip` can be used to select a different category when clicked.
         - Remember that calling a function directly in the `onClick` handler will execute immediately upon being rendered to the screen and won't trigger the `onClick` event!
-        - Refer the example shown in the `Recap` section of the React [docs](https://reactjs.org/docs/hooks-state.html#recap) for a good example of how to pass arguments to event handler functions.
+        - Refer to the example shown in the `Recap` section of the React [docs](https://reactjs.org/docs/hooks-state.html#recap) for a good example of how to pass arguments to event handler functions.
         - To check that it is working as expected, update the `isActive` prop for each `Chip` to be `true` whenever that `Chip`'s category is equal to the one in state. Refer to the sample gif for an example of what it should look like.
-      - Now go ahead and and do the same thing for our restaurant row.
+      - Now go ahead and do the same thing for our restaurant row.
       - If you get lost, refer to the React [docs](https://reactjs.org/docs/hooks-state.html#tip-using-multiple-state-variables) on using multiple state variables.
   - **Stage 5**: Displaying Nutritional Facts (`Conditional Rendering in JSX`)
     - Render menu items
@@ -94,7 +94,7 @@ They've sourced their nutrition data, bootstrapped a React application, and even
         - Right before the `return` statement of the `App.js` file, create a variable called `currentMenuItems`.
         - In that variable, store the result of calling `data.filter` and filtering each item depending on if its `.food_category` attribute is equal to the selected category and the `.restaurant` attribute is equal to the selected restaurant.
         - Finally, iterate over the `currentMenuItems` and render a `Chip` for each one.
-        - Create one more state variable for selected menu item, and give each chip an `onClick` handler that sets that menu item in state.
+        - Create one more state variable for the selected menu item, and give each chip an `onClick` handler that sets that menu item in state.
     - Display Nutritional Facts
       - Conditionally render the `NutritionalLabel` component with the selected item passed in as a prop, only when the selected item exists.
       - At this point, the app should work! Congratulations!
