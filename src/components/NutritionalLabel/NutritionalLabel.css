@@ -29,6 +29,6 @@
   margin: 2px 0;
 }
 
-.nutritional-label .nutrition-fact span {
+.nutritional-label .nutrition-fact span.fact-value {
   font-weight: normal;
 }

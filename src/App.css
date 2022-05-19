@@ -16,7 +16,6 @@
 .App .col {
   display: flex;
   flex-direction: column;
-  /* padding: 1rem 40px 40px; */
   padding: 1rem 40px 0px;
   min-width: 300px;
   width: 400px;
@@ -40,23 +39,24 @@
   margin-bottom: 1rem;
 }
 
-.App .restaurants {
+.App .RestaurantsRow {
   display: flex;
   flex-direction: column;
 }
 
-.App .restaurants h2 {
+.App .RestaurantsRow h2 {
   margin-top: 0.6rem;
   border-bottom: none;
 }
 
-.App .restaurants .chips {
+.App .restaurants.options {
   display: flex;
   flex-wrap: wrap;
   background: white;
   align-items: center;
   border: solid 8px black;
   padding: 1rem 2rem;
+  gap: 3px;
 }
 
 .App .display {

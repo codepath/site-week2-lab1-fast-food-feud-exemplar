@@ -14,6 +14,9 @@
 .chip:active {
   transform: translateY(1px);
 }
+.chip:focus {
+  outline: solid 2px pink;
+}
 .chip.active {
   background: tomato;
   color: white;

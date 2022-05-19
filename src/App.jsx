@@ -1,9 +1,9 @@
 import * as React from "react"
-import Header from "../Header/Header"
-import Instructions from "../Instructions/Instructions"
-import Chip from "../Chip/Chip"
-import NutritionalLabel from "../NutritionalLabel/NutritionalLabel"
-import { createDataSet } from "../../data/dataset"
+import Header from "./components/Header/Header"
+import Instructions from "./components/Instructions/Instructions"
+import Chip from "./components/Chip/Chip"
+import NutritionalLabel from "./components/NutritionalLabel/NutritionalLabel"
+import { Dataset } from "./data/dataset"
 import "./App.css"
 
 // don't move this!
@@ -20,10 +20,9 @@ export const appInfo = {
     allSelected: `Great choice! Amazing what a little knowledge can do!`,
   },
 }
-// or this!
-const { data, categories, restaurants } = createDataSet()
 
-function App() {
+export function App() {
+  const { data, categories, restaurants } = Dataset.createDataSet()
   const [selectedCategory, setSelectedCategory] = React.useState(null)
   const [selectedRestaurant, setSelectedRestaurant] = React.useState(null)
   const [selectedItem, setSelectedItem] = React.useState(null)
@@ -72,9 +71,9 @@ function App() {
         />
 
         {/* RESTAURANTS ROW */}
-        <div className="RestaurantsRow restaurants">
+        <div className="RestaurantsRow">
           <h2 className="title">Restaurants</h2>
-          <div className="chips">
+          <div className="restaurants options">
             {restaurants.map((restaurant) => {
               return (
                 <Chip
@@ -96,9 +95,9 @@ function App() {
           {/* MENU ITEM BUTTONS */}
           <div className="MenuItemButtons menu-items">
             <h2 className="title">Menu Items</h2>
-            {currentMenuItems.map((item) => (
+            {currentMenuItems.map((item, i) => (
               <Chip
-                key={item.item_name}
+                key={`${item.item_name}-${i}`}
                 label={item.item_name}
                 onClick={() => setSelectedItem(item)}
                 isActive={selectedItem && selectedItem.item_name === item.item_name}
@@ -112,7 +111,7 @@ function App() {
           </div>
         </div>
 
-        <div className="data-source">
+        <div className="data-sources">
           <p>{appInfo.dataSource}</p>
         </div>
       </div>

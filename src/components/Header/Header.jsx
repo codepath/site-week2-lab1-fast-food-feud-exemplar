@@ -1,7 +1,7 @@
 import * as React from "react"
 import "./Header.css"
 
-function Header(props) {
+export function Header(props) {
   return (
     <header className="header">
       <h1 className="title">{props.title}</h1>
