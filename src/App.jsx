@@ -1,4 +1,4 @@
-import * as React from "react"
+import { useState } from "react"
 import Header from "./components/Header/Header"
 import Instructions from "./components/Instructions/Instructions"
 import Chip from "./components/Chip/Chip"
@@ -23,9 +23,9 @@ export const appInfo = {
 
 export function App() {
   const { data, categories, restaurants } = Dataset.createDataSet()
-  const [selectedCategory, setSelectedCategory] = React.useState(null)
-  const [selectedRestaurant, setSelectedRestaurant] = React.useState(null)
-  const [selectedItem, setSelectedItem] = React.useState(null)
+  const [selectedCategory, setSelectedCategory] = useState(null)
+  const [selectedRestaurant, setSelectedRestaurant] = useState(null)
+  const [selectedItem, setSelectedItem] = useState(null)
 
   const selectCategory = (category) => {
     setSelectedItem(null)
