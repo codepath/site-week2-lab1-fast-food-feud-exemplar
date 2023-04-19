@@ -1,3 +1,4 @@
+import * as React from "react"
 import "./Header.css"
 
 export function Header(props) {

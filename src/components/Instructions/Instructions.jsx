@@ -1,3 +1,4 @@
+import * as React from "react"
 import "./Instructions.css"
 
 export function Instructions(props) {

@@ -1,3 +1,4 @@
+import * as React from "react"
 import { nutritionFacts } from "../../constants"
 import "./NutritionalLabel.css"
 

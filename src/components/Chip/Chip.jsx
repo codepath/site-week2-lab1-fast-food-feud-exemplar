@@ -1,3 +1,4 @@
+import * as React from "react"
 import "./Chip.css"
 
 export function Chip({
