@@ -50,7 +50,7 @@ npm run dev
         - This component is where all the magic happens. Take a look at what's been scaffolded out already.
         - There's a lot going on here! Don't worry, we'll cover the app piece by piece.
         - This file contains a section of code that looks _very much_ like HTML with some _Javascript_ code sprinkled in. This syntax is called JSX. It lets us write code that looks nearly identical to HTML, but allows us to mix in vanilla JavaScript and other neat things.
-      - Check out the `main.jsx` file at the root of the `src` directory as well. This is where our React app is actually mounted to the DOM in the browser. There's also some live testing configuration happening here. Don't worry about that part. We'll use those tests to guide the code we write in this lab.
+      - Check out the `main.jsx` file at the root of the `src` directory as well. This is where our React app is actually mounted to the DOM in the browser.
         - So where does the app actually go? Open up the `index.html` file located at the root directory and notice the `div` element with an `id` of `root`?. That's where our app actually gets rendered into!
         - The `script` tag imports our `main.jsx` file and React handles the rest.
         - Take a second and dig through some of the files. Don't worry about understanding all of it right away. We'll get to everything in due time.
@@ -64,7 +64,6 @@ npm run dev
       - Then do your best to pass values from the `appInfo` object into the `Header` component as `props`.
       - It should be clear from the className attribute of each JSX element in the `Header` component what prop it expects to render.
       - Once it's displaying all of the values it's supposed to, do the same for the `Instructions` component.
-      - To see if the code matches what is expected, click on the circular button in the top right of the screen. That should open up a live test report that will explain what tests are passing, and which ones still need to be adjusted. Click on any test to see an explanation of what error is currently causing it to fail.
       - Read the React [docs](https://beta.reactjs.org/learn/passing-props-to-a-component) on props for more info.
   - **Feature 2**: The `Categories` column and `Restaurants` row (`Iteration in JSX`)
     - The `Categories Column`
@@ -107,7 +106,7 @@ npm run dev
         - There should now be only one active category `Chip` and one active restaurant `Chip`!
         - This doesn't seem like a great approach though. Wouldn't it be nice if there were a better way to determine if the user had selected a category or restaurant?
   - **Feature 4**: Using the `Chip`'s `onClick` handler to modify state (`State in React`)
-    - Using the `React.useState()` hook to store values that will change over time in our application.
+    - Using the `useState` hook to store values that will change over time in our application.
       - Components often need to change what’s on the screen as a result of an interaction.
       - React provides a convenient mechanism to keep a record of what's changed in an application after each user interaction. It's known as **`state`**.
       - > NOTE: Think of `props` as data in components that _doesn't_ change, and `state` as data in components that _does_ change.
@@ -116,7 +115,7 @@ npm run dev
       - The `useState` returns an array containing two things - a state **value** and a state **setter** function.
         - Check out the React [docs](https://reactjs.org/docs/hooks-state.html#whats-a-hook) for more info.
       - State is an immutable (unchangeable) value, which means when we are interacting with it, we never modify state directly. Remember to always use the setter function to update state values.
-      - Let's begin by storing state for a category the user can select. Go ahead and implement that with the `React.useState` hook.
+      - Let's begin by storing state for a category the user can select. Go ahead and implement that with the `useState` hook.
     - Handling events in React
       - Because state is closely associated with interactivity (and things changing), we need a way to listen for events - like when a user interacts with elements in the app.
       - This is where event handlers come in. React event handlers are similar to HTML event handlers, except for a few key differences:
